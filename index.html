@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🔤 Character Counter | CodeWithUzma</title>
+  <!-- Safe emoji favicon (encoded SVG) -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Ctext y='0.9em' font-size='16'%3E🔤%3C/text%3E%3C/svg%3E">
+ <link rel="stylesheet" href="style.css"> 
+ 
+</head>
+<body>
+  <main class="wrap">
+    <header class="brand">
+      <h1>🔤 Character Counter</h1>
+      <p>Emoji-safe counter with words & lines, max limit, copy & clear. </p>
+    </header>
+
+    <section class="card">
+      <div class="toolbar">
+        <div class="left-tools">
+          <button id="themeBtn" class="toggle" title="Toggle Dark/Light">🌙 Dark Mode</button>
+          <div class="limit">
+            <label for="maxLen">Max:</label>
+            <input id="maxLen" type="number" min="0" step="1" value="200" />
+            <label><input id="hardLimit" type="checkbox" checked style="vertical-align:middle; margin-right:6px;">Hard limit</label>
+          </div>
+        </div>
+        <div class="right-tools">
+          <button id="copyBtn" class="btn ghost">📋 Copy</button>
+          <button id="clearBtn" class="btn danger">🧹 Clear</button>
+        </div>
+      </div>
+
+      <textarea id="text" placeholder="Start typing here... Supports emojis, multi-language text, and proper character (grapheme) counting."></textarea>
+
+      <!-- Progress -->
+      <div class="bar" aria-hidden="true">
+        <div id="fill" class="fill"></div>
+      </div>
+      <div class="cap">
+        <span id="usedLabel">0 / 200</span>
+        <span id="remainingLabel">200 left</span>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats">
+        <div class="pill">
+          <span id="chars" class="num">0</span>
+          <span class="lbl">Characters</span>
+        </div>
+        <div class="pill">
+          <span id="words" class="num">0</span>
+          <span class="lbl">Words</span>
+        </div>
+        <div class="pill">
+          <span id="lines" class="num">1</span>
+          <span class="lbl">Lines</span>
+        </div>
+        <div class="pill">
+          <span id="bytes" class="num">0</span>
+          <span class="lbl">Bytes (UTF-8)</span>
+        </div>
+      </div>
+    </section>
+
+    <footer class="foot">Made with 💖 by <b>CodeWithUzma</b></footer>
+  </main>
+
+ <script src="script.js"></script>
+</body>
+</html>
